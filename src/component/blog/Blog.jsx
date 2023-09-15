@@ -8,7 +8,7 @@ const Blog = ({blog,handleBookMark}) => {
         <div className='Introduction  border-2 border-red-300 rounded-lg p-5'>
             <img src={author_image} alt="" />
             <h2>{title} </h2>
-            <button onClick={handleBookMark}><FaBookmark></FaBookmark></button>
+            <button onClick={()=>handleBookMark(blog)}><FaBookmark></FaBookmark></button>
             <p>
                 {
                     hashtags.map((hash, idx) => <span key={idx} className='me-5 text-blue-600'><a href=''>#{hash}</a></span>)
@@ -19,7 +19,8 @@ const Blog = ({blog,handleBookMark}) => {
 };
 
 Blog.propTypes = {
-    blog:PropTypes.object.isRequired
+    blog:PropTypes.object.isRequired,
+    handleBookMark:PropTypes.func
 }
 
 export default Blog;
